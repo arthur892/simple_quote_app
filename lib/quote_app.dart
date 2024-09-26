@@ -7,16 +7,16 @@ class QuoteApp extends StatefulWidget {
   final QuoteRepository repository;
   TextStyle myTextstyle = TextStyle(fontSize: 32);
   @override
-  State<StatefulWidget> createState() => QuoteAppState(repository: repository);
+  State<StatefulWidget> createState() => QuoteAppState();
 }
 
 class QuoteAppState extends State<QuoteApp> {
-  QuoteAppState({required this.repository});
-  final QuoteRepository repository;
+  //QuoteAppState({required this.repository});
+  //final QuoteRepository repository;
 
   @override
   Widget build(BuildContext context) {
-    QuoteData quote = repository.getQuote();
+    QuoteData quote = widget.repository.getQuote();
     String author = quote.author;
     String text = quote.text;
     int ranking = quote.ranking;
@@ -49,10 +49,6 @@ class QuoteAppState extends State<QuoteApp> {
               ),
               ElevatedButton(
                   onPressed: () {
-                    quote = repository.getQuote();
-                    author = quote.author;
-                    text = quote.text;
-                    ranking = quote.ranking;
                     setState(() {});
                   },
                   child: const Text("Neues Zitat"))
