@@ -55,7 +55,7 @@ class QuoteAppState extends State<QuoteApp> {
                     ranking = quote.ranking;
                     setState(() {});
                   },
-                  child: Text("Neues Zitat"))
+                  child: const Text("Neues Zitat"))
             ],
           ),
         ),
